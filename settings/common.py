@@ -52,6 +52,8 @@ INSTALLED_APPS += [
     'allauth.socialaccount',
     # 'allauth.socialaccount.providers.facebook',
     'anymail',
+    'djangobower',
+    'polls'
 ]
 
 # Django debug toolbar settings
@@ -135,6 +137,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'npm.finders.NpmFinder',
     'compressor.finders.CompressorFinder',
+    'djangobower.finders.BowerFinder',
 )
 COMPRESS_PRECOMPILERS = (
     ('text/scss', 'node_modules/node-sass/bin/node-sass {infile} {outfile}'),
@@ -146,6 +149,14 @@ ACCOUNT_ACTIVATION_DAYS = 7
 
 # Crispy forms
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# BOWER config
+
+BOWER_COMPONENTS_ROOT = BASE_DIR + '/'
+BOWER_INSTALLED_APPS = (
+    'jquery#1.9',
+    'underscore',
+)
 
 # Auth backends
 AUTHENTICATION_BACKENDS = [
